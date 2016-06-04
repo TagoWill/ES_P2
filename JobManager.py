@@ -130,7 +130,6 @@ def wait_response(oldnmae, id):
                             'Replace': False
                         },
                     ],
-
                 )
                 s3.delete_objects(
                     Bucket='ucesproject2',
