@@ -1,3 +1,5 @@
+import os
+
 import boto3
 import time
 
@@ -83,7 +85,7 @@ def see_queue():
             },
         ],
     )
-    s3.download_file('ucesproject2', splited[1], 'temp/' + splited[1])
+    s3.download_file('ucesproject2', splited[1], os.path.join(os.path.dirname(__file__) + 'temp/', splited[1]))
 
     print('work')
     file = open('temp/' + splited[1], 'r')
