@@ -1,18 +1,18 @@
 import boto3
 
 sqs = boto3.client('sqs',
-                   aws_access_key_id='AKIAJWPN2OL5UVXVHASA',
-                   aws_secret_access_key='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',
+                   aws_access_key_id='',
+                   aws_secret_access_key='',
                    region_name='eu-west-1'
                    )
 
 s3 = boto3.client('s3',
-                  aws_access_key_id='AKIAJWPN2OL5UVXVHASA',
-                  aws_secret_access_key='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')
+                  aws_access_key_id='',
+                  aws_secret_access_key='')
 
 simpledb = boto3.client('sdb',
-                        aws_access_key_id='AKIAJWPN2OL5UVXVHASA',
-                        aws_secret_access_key='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',
+                        aws_access_key_id='',
+                        aws_secret_access_key='',
                         region_name='eu-west-1'
                         )
 
