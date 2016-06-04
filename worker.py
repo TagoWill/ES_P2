@@ -85,11 +85,11 @@ def see_queue():
             },
         ],
     )
-    s3.download_file('ucesproject2', splited[1], os.path.join(os.path.dirname(__file__) + 'temp/', splited[1]))
+    s3.download_file('ucesproject2', splited[1], os.path.join(os.path.dirname(__file__) + '/temp/', splited[1]))
 
     print('work')
-    file = open('temp/' + splited[1], 'r')
-    file2 = open('temp/' + namefile[0] + 'done.txt', 'w')
+    file = open(os.path.join(os.path.dirname(__file__) + '/temp/',splited[1]), 'r')
+    file2 = open(os.path.join(os.path.dirname(__file__) + '/temp/', namefile[0] + 'done.txt'), 'w')
     file2.write('Done: ' + file.read())
 
     file2.close()
@@ -119,7 +119,7 @@ def see_queue():
             },
         ],
     )
-    s3.upload_file('temp/' + namefile[0] + 'done.txt', 'ucesproject2', namefile[0] + 'done.txt')
+    s3.upload_file(os.path.join(os.path.dirname(__file__) + '/temp/', namefile[0] + 'done.txt'), 'ucesproject2', namefile[0] + 'done.txt')
     print('writes sqs')
     simpledb.put_attributes(
         DomainName='logging',
